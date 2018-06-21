@@ -1,4 +1,4 @@
-# archetype-ui
+# druid-ui
 
 > A Vue.js project
 
