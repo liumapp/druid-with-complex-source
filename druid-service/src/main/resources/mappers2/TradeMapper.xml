@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.liumapp.demo.mybatis.complex.api.db.testb.mapper.TradeMapper">
-  <resultMap id="BaseResultMap" type="com.liumapp.demo.mybatis.complex.api.db.testb.domain.Trade">
+<mapper namespace="com.liumapp.demo.druid.complex.api.db.testb.mapper.TradeMapper">
+  <resultMap id="BaseResultMap" type="com.liumapp.demo.druid.complex.api.db.testb.domain.Trade">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="userId" jdbcType="BIGINT" property="userid" />
     <result column="product" jdbcType="VARCHAR" property="product" />
@@ -70,7 +70,7 @@
   <sql id="Base_Column_List">
     id, userId, product, number, price, creatAt
   </sql>
-  <select id="selectByExample" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.TradeExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.liumapp.demo.druid.complex.api.db.testb.domain.TradeExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -95,13 +95,13 @@
     delete from trade
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.TradeExample">
+  <delete id="deleteByExample" parameterType="com.liumapp.demo.druid.complex.api.db.testb.domain.TradeExample">
     delete from trade
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.Trade">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.liumapp.demo.druid.complex.api.db.testb.domain.Trade">
     insert into trade (id, userId, product, 
       number, price, creatAt
       )
@@ -109,7 +109,7 @@
       #{number,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL}, #{creatat,jdbcType=TIMESTAMP}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.Trade">
+  <insert id="insertSelective" parameterType="com.liumapp.demo.druid.complex.api.db.testb.domain.Trade">
     insert into trade
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -152,7 +152,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.TradeExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.liumapp.demo.druid.complex.api.db.testb.domain.TradeExample" resultType="java.lang.Long">
     select count(*) from trade
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -196,7 +196,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.Trade">
+  <update id="updateByPrimaryKeySelective" parameterType="com.liumapp.demo.druid.complex.api.db.testb.domain.Trade">
     update trade
     <set>
       <if test="userid != null">
@@ -217,7 +217,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.liumapp.demo.mybatis.complex.api.db.testb.domain.Trade">
+  <update id="updateByPrimaryKey" parameterType="com.liumapp.demo.druid.complex.api.db.testb.domain.Trade">
     update trade
     set userId = #{userid,jdbcType=BIGINT},
       product = #{product,jdbcType=VARCHAR},
