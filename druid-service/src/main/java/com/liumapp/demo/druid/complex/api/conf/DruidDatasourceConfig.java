@@ -1,5 +1,6 @@
 package com.liumapp.demo.druid.complex.api.conf;
 
+import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +14,7 @@ import javax.sql.DataSource;
  * @file DruidDatasourceConfig.java
  * @email liumapp.com@gmail.com
  * @homepage http://www.liumapp.com
- * @date 6/15/18
+ * @date 6/21/18
  */
 @Configuration
 public class DruidDatasourceConfig {
@@ -24,15 +25,15 @@ public class DruidDatasourceConfig {
      */
     @Primary
     @Bean(name = "primaryDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.primary")
+    @ConfigurationProperties(prefix = "spring.datasource.druid.primary")
     public DataSource primaryDataSource () {
-        return DataSourceBuilder.create().build();
+        return DruidDataSourceBuilder.create().build();
     }
 
     @Bean(name = "secondDataSource")
-    @ConfigurationProperties(prefix = "spring.datasource.second")
+    @ConfigurationProperties(prefix = "spring.datasource.druid.second")
     public DataSource secondDataSource () {
-        return DataSourceBuilder.create().build();
+        return DruidDataSourceBuilder.create().build();
     }
 
 }
