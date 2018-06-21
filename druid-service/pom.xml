@@ -8,8 +8,8 @@
     <version>1.5.6.RELEASE</version>
   </parent>
 
-  <groupId>com.liumapp.demo.mybatis.complex.api</groupId>
-  <artifactId>complex-service</artifactId>
+  <groupId>com.liumapp.demo.druid.complex.api</groupId>
+  <artifactId>druid-service</artifactId>
   <version>v1.0.0</version>
   <packaging>jar</packaging>
 
@@ -19,7 +19,7 @@
     <java.version>1.8</java.version>
   </properties>
 
-  <name>complex-service</name>
+  <name>druid-service</name>
   <url>http://maven.apache.org</url>
 
   <dependencies>
